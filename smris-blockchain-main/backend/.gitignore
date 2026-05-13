@@ -1,9 +1,0 @@
-# Dependencies
-node_modules/
-
-# Environment Variables (SECRETS)
-.env
-
-# System Files
-.DS_Store
-Thumbs.db
