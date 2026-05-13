@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMRIS | Secure Medical Records</title>
+    
+    <!-- 1. Google Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- 2. Custom Space Grotesk & Inter Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
+    
+    <!-- 3. Tailwind CSS CDN & Custom Theme Configuration -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#00e5ff",
+              "on-primary": "#00363d",
+              "secondary": "#4edea3",
+              "background": "#0b1326",
+              "surface-variant": "#2d3449",
+              "outline-variant": "#3b494c",
+            },
+            fontFamily: {
+              "h1": ["Space Grotesk", "sans-serif"],
+              "h2": ["Space Grotesk", "sans-serif"],
+              "h3": ["Space Grotesk", "sans-serif"],
+              "body-md": ["Inter", "sans-serif"],
+              "body-lg": ["Inter", "sans-serif"],
+              "label-sm": ["Inter", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Make sure this path matches where your main.jsx is located! -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

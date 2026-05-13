@@ -1,0 +1,19 @@
+{
+  "name": "smris-blockchain",
+  "version": "1.0.0",
+  "description": "Production Ready Medical Blockchain",
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.ts"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@types/node": "^25.6.0",
+    "dotenv": "^17.4.1",
+    "hardhat": "^2.22.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0"
+  }
+}

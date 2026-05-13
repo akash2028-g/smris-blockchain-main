@@ -1,0 +1,195 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "VRoom",
+  "sourceName": "contracts/VRoom.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "patient",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "doctor",
+          "type": "address"
+        }
+      ],
+      "name": "ConnectionApproved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "patient",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "doctor",
+          "type": "address"
+        }
+      ],
+      "name": "ConnectionRequested",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "doctor",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "receptionist",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "expiry",
+          "type": "uint256"
+        }
+      ],
+      "name": "ProxyDelegated",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_patient",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_doctor",
+          "type": "address"
+        }
+      ],
+      "name": "approveConnection",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_patient",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_doctor",
+          "type": "address"
+        }
+      ],
+      "name": "checkLink",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_receptionist",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_durationSeconds",
+          "type": "uint256"
+        }
+      ],
+      "name": "delegateProxy",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "doctorProxies",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "receptionist",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "expiryTime",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "isLinked",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_doctor",
+          "type": "address"
+        }
+      ],
+      "name": "requestConnection",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b5061044c8061001f6000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c8063030e080714610067578063047f81831461007c578063b76aff83146100bf578063c99fc2f4146100d2578063dd7919a6146100e5578063f3d21d1014610137575b600080fd5b61007a610075366004610376565b61014a565b005b6100aa61008a366004610376565b600160209081526000928352604080842090915290825290205460ff1681565b60405190151581526020015b60405180910390f35b61007a6100cd3660046103a9565b610260565b61007a6100e03660046103d3565b6102f1565b6101186100f33660046103d3565b600060208190529081526040902080546001909101546001600160a01b039091169082565b604080516001600160a01b0390931683526020830191909152016100b6565b6100aa610145366004610376565b61032a565b6001600160a01b038082166000818152602081815260408083208151808301909252805490951680825260019095015491810191909152339283149390921480156101985750816020015142105b905082806101a35750805b6101ff5760405162461bcd60e51b8152602060048201526024808201527f4e6f7420617574686f72697a656420746f20617070726f76652074686973206c60448201526334b7359760e11b606482015260840160405180910390fd5b6001600160a01b038086166000818152600160208181526040808420958a1680855295909152808320805460ff1916909217909155517fee47dcdebd04ac22fe2b7f6496bf2788746a2bee79e78f3119e77140296227049190a35050505050565b600061026c82426103f5565b6040805180820182526001600160a01b038681168083526020808401868152336000818152808452879020955186546001600160a01b031916951694909417855551600190940193909355925184815293945091927f1004d3bae48de43f74593039a4cdaacb3b741a55ea3500b618a3105401704ef4910160405180910390a3505050565b6040516001600160a01b0382169033907f224abe3ea9ae0100f5b7117f872687ac5e1836f3a834cf9d04ae0b61bbcf5da090600090a350565b6001600160a01b0380831660009081526001602090815260408083209385168352929052205460ff165b92915050565b80356001600160a01b038116811461037157600080fd5b919050565b6000806040838503121561038957600080fd5b6103928361035a565b91506103a06020840161035a565b90509250929050565b600080604083850312156103bc57600080fd5b6103c58361035a565b946020939093013593505050565b6000602082840312156103e557600080fd5b6103ee8261035a565b9392505050565b8082018082111561035457634e487b7160e01b600052601160045260246000fdfea264697066735822122098d93e93f3f25b46bcc9e76b31502ab5832f10cde1f07e781d3dea3ae7f31c8964736f6c634300081c0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c8063030e080714610067578063047f81831461007c578063b76aff83146100bf578063c99fc2f4146100d2578063dd7919a6146100e5578063f3d21d1014610137575b600080fd5b61007a610075366004610376565b61014a565b005b6100aa61008a366004610376565b600160209081526000928352604080842090915290825290205460ff1681565b60405190151581526020015b60405180910390f35b61007a6100cd3660046103a9565b610260565b61007a6100e03660046103d3565b6102f1565b6101186100f33660046103d3565b600060208190529081526040902080546001909101546001600160a01b039091169082565b604080516001600160a01b0390931683526020830191909152016100b6565b6100aa610145366004610376565b61032a565b6001600160a01b038082166000818152602081815260408083208151808301909252805490951680825260019095015491810191909152339283149390921480156101985750816020015142105b905082806101a35750805b6101ff5760405162461bcd60e51b8152602060048201526024808201527f4e6f7420617574686f72697a656420746f20617070726f76652074686973206c60448201526334b7359760e11b606482015260840160405180910390fd5b6001600160a01b038086166000818152600160208181526040808420958a1680855295909152808320805460ff1916909217909155517fee47dcdebd04ac22fe2b7f6496bf2788746a2bee79e78f3119e77140296227049190a35050505050565b600061026c82426103f5565b6040805180820182526001600160a01b038681168083526020808401868152336000818152808452879020955186546001600160a01b031916951694909417855551600190940193909355925184815293945091927f1004d3bae48de43f74593039a4cdaacb3b741a55ea3500b618a3105401704ef4910160405180910390a3505050565b6040516001600160a01b0382169033907f224abe3ea9ae0100f5b7117f872687ac5e1836f3a834cf9d04ae0b61bbcf5da090600090a350565b6001600160a01b0380831660009081526001602090815260408083209385168352929052205460ff165b92915050565b80356001600160a01b038116811461037157600080fd5b919050565b6000806040838503121561038957600080fd5b6103928361035a565b91506103a06020840161035a565b90509250929050565b600080604083850312156103bc57600080fd5b6103c58361035a565b946020939093013593505050565b6000602082840312156103e557600080fd5b6103ee8261035a565b9392505050565b8082018082111561035457634e487b7160e01b600052601160045260246000fdfea264697066735822122098d93e93f3f25b46bcc9e76b31502ab5832f10cde1f07e781d3dea3ae7f31c8964736f6c634300081c0033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
